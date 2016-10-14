@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 ///// Serving static files from ./www
 app.use(express.static(path.join(__dirname, './www')))
 
-// startScreener()
+startScreener()
 
 app.get('/refresh', function(req, res) {
   console.log('in here')

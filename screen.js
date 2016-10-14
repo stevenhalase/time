@@ -9,6 +9,14 @@ function startScreener () {
     fs.mkdir(`./www/screenshots-${todaysDate.getMonth()}-${todaysDate.getDay()}-${todaysDate.getFullYear()}/`);
   }
 
+  const innerDate = new Date();
+  screenshot(`./${ssDir}/screenshot-${innerDate.getHours()}-${innerDate.getMinutes()}-${innerDate.getSeconds()}.png`, (error, complete) => {
+      if(error)
+          console.log("Screenshot failed", error);
+      else
+          console.log("Screenshot succeeded");
+  });
+
   setInterval(function() {
     const innerDate = new Date();
     screenshot(`./${ssDir}/screenshot-${innerDate.getHours()}-${innerDate.getMinutes()}-${innerDate.getSeconds()}.png`, (error, complete) => {
@@ -17,7 +25,7 @@ function startScreener () {
         else
             console.log("Screenshot succeeded");
     });
-  },300000)
+},900000)
 
 }
 

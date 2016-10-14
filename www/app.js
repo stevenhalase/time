@@ -11,15 +11,22 @@ function mainController($scope, $http) {
 
   $scope.refresh = function() {
     $http.get('/refresh').then(function(response) {
+      console.log($scope.screenshots, response.data.items)
+      if ($scope.screenshots.length == response.data.items.length) {
+        Materialize.toast('Screenshots already up to date!', 4000);
+      } else {
+        Materialize.toast('Screenshots updated!', 4000);
+      }
       $scope.screenshots = response.data.items;
       // findTags($scope.screenshots);
       $scope.path = response.data.path.split('/')[2] + '/';
-      console.log($scope.screenshots, $scope.path)
+
+    //   console.log($scope.screenshots, $scope.path)
     })
   }
 
   $scope.openModal = function(selector) {
-    console.log(selector)
+    // console.log(selector)
     $(selector).openModal();
   }
 
