@@ -1,0 +1,97 @@
+body {
+  min-height: 100vh;
+  text-align: center;
+
+  background: rgba(52,152,219,1);
+  background: -moz-linear-gradient(top, rgba(52,152,219,1) 0%, rgba(41,128,185,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52,152,219,1)), color-stop(100%, rgba(41,128,185,1)));
+  background: -webkit-linear-gradient(top, rgba(52,152,219,1) 0%, rgba(41,128,185,1) 100%);
+  background: -o-linear-gradient(top, rgba(52,152,219,1) 0%, rgba(41,128,185,1) 100%);
+  background: -ms-linear-gradient(top, rgba(52,152,219,1) 0%, rgba(41,128,185,1) 100%);
+  background: linear-gradient(to bottom, rgba(52,152,219,1) 0%, rgba(41,128,185,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3498db', endColorstr='#2980b9', GradientType=0 );
+}
+
+.container {
+  padding-top: 65px;
+}
+
+.row {
+  background-color: #ecf0f1;
+  min-height: 100px;
+}
+
+.logo {
+  /*font-family: 'Pacifico', cursive;*/
+  font-family: 'Righteous', cursive;
+  font-size: 75px;
+  color: white;
+  position: absolute;
+  margin: 0;
+  top: 20px;
+  left: 10%;
+  text-shadow: 1px 1px 12px rgba(50,50,50,1);
+}
+
+.logo i {
+  font-size: 55px;
+}
+
+.connectwise {
+  position: absolute;
+  margin: 0;
+  top: 55px;
+  right: 10%;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.refresh-btn {
+  margin: 20px;
+  color: white;
+}
+
+.card {
+  padding: 10px;
+  box-shadow: 0;
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out, -moz-box-shadow 0.3s ease-in-out:
+}
+
+.card-image {
+  padding: 5px;
+}
+
+.card .card-content {
+  background-color: #ecf0f1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.modal {
+  width: 90%;
+}
+
+.modal-content {
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 175px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 175px -10px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 175px -10px rgba(0,0,0,0.75);
+}
+
+.modal-content p {
+  background-color: #ecf0f1;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 10px;
+  margin: 0;
+}
+
+.modal-img {
+  width: 100%;
+}

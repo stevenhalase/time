@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="screenerApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Screener</title>
+    <!-- <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./app.css">
+    <script src="./lib/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="./lib/angular/angular.js" charset="utf-8"></script>
+    <!-- <script src="./lib/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="./app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="mainCtrl">
+    <p class="logo">Time <i class="material-icons">alarm</i></p>
+    <a href="https://cw.nsrit.com/" target="_blank"><img class="connectwise" src="./images/connectwise.png"></a>
+    <div class="container">
+      <button class="refresh-btn waves-effect waves-light btn-large btn-flat grey darken-2" ng-click="refresh()">Refresh</button>
+      <div class="row">
+          <div class="col s12 m4" ng-repeat="screen in screenshots track by $index">
+            <div class="card" ng-class="{shadow: showShadow}" ng-mouseenter="showShadow = true" ng-mouseleave="showShadow = false">
+              <div class="card-image">
+                <a href="" ng-click="openModal('#modal-' + $index)">
+                  <img ng-src="{{path + screen.item}}">
+                </a>
+                <!-- <span class="card-title">Screenshot {{$index}}</span> -->
+              </div>
+              <div class="card-content">
+                <p>{{path.split('-')[1] + '/' + path.split('-')[2] + '/' + path.split('-')[3].substring(0, path.split('-')[3].length - 1) + ' ' + screen.item.split('-')[1] + ':' + screen.item.split('-')[2] + ':' + screen.item.split('-')[3].split('.')[0]}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="modal-{{$index}}" class="modal" ng-repeat="screen in screenshots track by $index">
+      <div class="modal-content">
+        <p>{{path.split('-')[1] + '/' + path.split('-')[2] + '/' + path.split('-')[3].substring(0, path.split('-')[3].length - 1) + ' ' + screen.item.split('-')[1] + ':' + screen.item.split('-')[2] + ':' + screen.item.split('-')[3].split('.')[0]}}</p>
+        <img class="modal-img" ng-src="{{path + screen.item}}">
+      </div>
+    </div>
+
+  </body>
+</html>
